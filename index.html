@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="root2"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      let root = document.getElementById("root");
+      let data="Seize the day";
+      let p=<p>{data}</p>;
+    //   const reactRoot = ReactDOM.createRoot(root);
+    //   reactRoot.render(p)
+      let root2 = document.getElementById("root2");
+      let flag=false;
+      let data2=flag?<p>Seize the day</p>:<p>Good Day</p>;
+      let element=(
+        <>
+        <p>{data}</p><p>{data2}</p>
+        </>
+      )
+      const reactRoot=ReactDOM.createRoot(root);
+      reactRoot.render(element)
+    </script>
+  </body>
+</html>
